@@ -10,6 +10,8 @@ export class CustomLabelDirective implements OnInit{
   private _color: string = 'red';
   private _errors?: ValidationErrors | null;
 
+
+  // Recibo el valor del color del padre y lo seteo en la variable
   @Input()
   set color ( value: string) {
 
@@ -18,6 +20,7 @@ export class CustomLabelDirective implements OnInit{
   }
 
 
+  // Recibo el valor de los erroes del padre y lo seteo en la variable
   @Input()
   set errors ( value: ValidationErrors | null | undefined ) {
 
@@ -28,17 +31,19 @@ export class CustomLabelDirective implements OnInit{
 
   constructor( private el: ElementRef<HTMLElement>) {
 
-    // console.log('Constuctor de la directiva');
-    // console.log(el);
     this.htmlElement = el;
   }
 
 
   ngOnInit(): void {
 
+    // Para el color inicial de la etiqueta
     this.setStyle();
   }
 
+
+
+  // Método para cambiar el color al texto segun el valor recibido del padre
   setStyle(): void {
 
     if ( !this.htmlElement ) return;
@@ -47,6 +52,9 @@ export class CustomLabelDirective implements OnInit{
   }
 
 
+
+
+  // Método para cambiar eltexto segun los errores recibidos del padre
   setErrorMessage(): void {
 
     if ( !this.htmlElement ) return;

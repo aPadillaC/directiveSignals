@@ -26,6 +26,9 @@ export class PropertiesPageComponent implements OnDestroy, OnInit{
 
   public counter = signal(10);
 
+
+  // Método para demostrar la funcionalidad de effect(), que "salta" cada vez que hay un cambio en las señales que están dentro del efecto
+
   public userChangedEffect = effect( () => {
 
     console.log(` ${this.user().first_name} - ${ this.counter()}`);

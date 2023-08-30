@@ -8,6 +8,8 @@ import { User } from '../../interfaces/user-request.interface';
 })
 export class UserInfoPageComponent implements OnInit{
 
+  // Inyección de de dependencias sin utilizar el constructor
+
   private userService = inject(UsersServiceService);
 
   public userId = signal(1);
